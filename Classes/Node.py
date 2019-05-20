@@ -33,6 +33,9 @@ class Node(NodeType):
         self._historic_run_durations = []  # How long each run took
         self._historic_run_successes = []  # Whether each historic run was a success or not
 
+        # Vague idea of how important this node is which scheduling can take advantage of
+        self.priority = 1
+
     # Add another Node as a dependency
     def add_dependency(self, name: str, x: NodeType, max_oldness: str, change_triggers_run: bool) -> None:
         self._dependencies[name] = x
