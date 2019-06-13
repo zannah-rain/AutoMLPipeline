@@ -17,6 +17,8 @@ Represent a Python / R project as if it were a node-graph.
 - Automatic project invalidation & re-run
 - Easy paralellism, laying out the project in terms of dependencies allows an automatic task scheduler to easily identify situations where multiple nodes can be run at once
 - Easy namespacing, each node can have arbitrary data attached to it so there are less worries about name collisions in large projects
+- Easy handling of resources, if a given object/node can be saved/loaded vs regenerated, a scheduler can easily check which is fastest. For large objects/nodes a scheduler can then decide when to load/unload it intelligently.
+- Easy optimisation, giving a node multiple ways to be generated with equivalent outputs (eg: loading from several potential locations), the scheduler can optimise it over time by testing each approach (no more than needed) and sticking with the fastest. No wasted time.
 
 ## Changes in thought process
 - Nodes should represent objects, connections should represent ways to construct those objects
